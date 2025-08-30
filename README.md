@@ -39,4 +39,31 @@ Approximation of pi: 3.1415929203539823008849557522123893805309734513274
 Sum of dataset of huge numbers: 500000000000000000000000000000000000000000000000010
 ```
 
-## 2. 
+## 2. Prompt Automation 
+This demonstrates:
+1. Handling LLM/GPT API services including model selection.
+2. Function definition for setting response, messages and temperature. 
+3. Basic Architecture for prompt and response. 
+
+#### Code
+```python
+# Function 
+def llm_response(prompt):
+    response = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+	messages=[{'role':'user', 'content':prompt}],
+	temperature=0
+    )
+    return response.choices[0].message['content']
+```
+
+#### Usage
+```bash
+(terminal)~% sudo python3 openai_1.py
+```
+
+#### Output
+```txt 
+Hello, World
+Positive
+```
