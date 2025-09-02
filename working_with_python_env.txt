@@ -1,4 +1,4 @@
-1. Each project gets its own python environment. 
+1. Each project gets its own python environment. Default directory for env is: .venv
 2. "venv" is used for virtual python environments.
 
 3. Using python env: 
