@@ -34,3 +34,7 @@ Update full list: (.venv) sap@Sanjays-MacBook-Air use_jupyter % pip freeze > req
 
 4. Start jupyterlab: 
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % jupyter lab
+
+5. deactivate the environment:
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % deactivate 
+
