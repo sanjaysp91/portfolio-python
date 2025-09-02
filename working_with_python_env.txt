@@ -20,11 +20,17 @@ drwxr-xr-x@ 7 sap  staff    224 Sep  2 22:42 .venv
 3d. Activate environment: 
 sap@Sanjays-MacBook-Air use_jupyter % source .venv/bin/activate
 
-3e. Install jupyterlab: 
-(.venv) sap@Sanjays-MacBook-Air use_jupyter % python3 -m pip install jupyterlab
+3e. Install requirements using requirements.txt 
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % pip install -r requirements.txt
 Collecting jupyterlab... 
+
+3f. If new libraries are used, update requirements file: 
+Manual: 
+Maually add exact library that is installed using 'python3 -m pip install <lib_name>' command.
+E.g. To install Jupyter Lab: 
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % python3 -m pip install jupyterlab
+Manually append: jupyterlab==4.4.6 to requirements.txt file 
+Update full list: (.venv) sap@Sanjays-MacBook-Air use_jupyter % pip freeze > requirements_full.txt 
 
 4. Start jupyterlab: 
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % jupyter lab
-
-
