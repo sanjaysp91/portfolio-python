@@ -1,5 +1,4 @@
 # portfolio-python
-Author: Sanjay Patel
 These are my portfolio projects using Python Programming Language intended for interested clients. 
 
 ## 1. Large Number Processing
