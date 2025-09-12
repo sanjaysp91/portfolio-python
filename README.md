@@ -57,7 +57,7 @@ Manually append: jupyterlab==4.4.6 to requirements.txt file
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % deactivate 
 ```
 ### Lessons in Python using Jupyter Notebook
-Here is some information from a great book on Programming the Raspberry Pi [1].
+Here is some information from a great book on Programming the Raspberry Pi by Simon Monk [1].
 #### 1. Printing text
 #### 2. Variables 
 #### 3. Importing libraries (aka modules)
@@ -128,7 +128,7 @@ Here is some information from a great book on Programming the Raspberry Pi [1].
 | math.sin, cos, tan,<br>asin, acos, atan | s.lower, s.replace(old, new), <br>s.split(), s.splitlines(),<br>s.strip(), s.upper() | --- | --- |
 
 <!-- Book References -->
-[1]: "Programming the Raspberry Pi" by Simon Monk, available at https://digilib.stiestekom.ac.id/assets/dokumen/ebook/feb_878c8bf63a6f798196708ee5e67a4c05d9181945_1651135869.pdf
+[1]: " Programming the Raspberry Pi" by Simon Monk. 
 
 
 ## 1. Large Number Processing
