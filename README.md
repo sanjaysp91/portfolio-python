@@ -1,6 +1,63 @@
 # portfolio-python
 These are my portfolio projects using Python Programming Language intended for interested clients. 
 
+## 0. Begin Here
+### Working with Python Environment
+#### 1. Each project gets its own python environment. 
+    Default directory for env is: .venv
+#### 2. "venv" is used for virtual python environments.
+#### 3. Using python env: 
+##### 3a. Check python version, use latest:
+```bash
+sap@Sanjays-MacBook-Air use_jupyter % python3 --version
+Python 3.13.3
+```
+
+##### 3b. Create python env: 
+```bash
+sap@Sanjays-MacBook-Air use_jupyter % python3 -m venv .venv
+```
+##### 3c. Check newly created .venv directory: 
+```bash
+sap@Sanjays-MacBook-Air use_jupyter % ls -la
+drwxr-xr-x  5 sap  staff    160 Sep  2 22:42 .
+drwxr-xr-x  4 sap  staff    128 Sep  2 22:32 ..
+-rw-r--r--@ 1 sap  staff   6148 Sep  2 22:32 .DS_Store
+drwxr-xr-x@ 7 sap  staff    224 Sep  2 22:42 .venv
+-rw-r--r--@ 1 sap  staff  18343 Sep  2 22:33 how-to-python.ipynb
+```
+##### 3d. Activate environment: 
+```bash
+sap@Sanjays-MacBook-Air use_jupyter % source .venv/bin/activate
+```
+##### 3e. Install requirements using requirements.txt 
+```bash
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % pip install -r requirements.txt
+Collecting jupyterlab... 
+```
+##### 3f. If new libraries are used, update requirements file: 
+###### Manual: 
+Maually add exact library that is installed using 'python3 -m pip install <lib_name>' command.
+
+E.g. To install Jupyter Lab: 
+```bash
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % python3 -m pip install jupyterlab
+```
+Manually append: jupyterlab==4.4.6 to requirements.txt file 
+###### Update full list: 
+```bash
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % pip freeze > requirements_full.txt 
+```
+#### 4. Start jupyterlab: 
+```bash
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % jupyter lab
+```
+#### 5. deactivate the environment:
+```bash
+(.venv) sap@Sanjays-MacBook-Air use_jupyter % deactivate 
+```
+### working with Jupyter Notebook
+
 ## 1. Large Number Processing
 This demonstrates:
 1. Handling extremely large integers (math.factorial).
