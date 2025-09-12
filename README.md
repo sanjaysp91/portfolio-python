@@ -114,18 +114,18 @@ Here is some information from a great book on Programming the Raspberry Pi by Si
     * There is a hierarchy of different types of errors that can be caught. 
 
 #### 13. Summary of useful functions 
-| **Numbers** | **Strings** | **Lists** | **Dictionary** |
-|---|---|---|---|
-| abs(x) | s.capitalize() | del(a[i:j]) | len(d)
-| bin(x) | s.center(width) | a.append(x) | del(dkey)
-| complex(r, i) | s.endswith(str) | a.count(x) | key in d
-| hex(x) | s.find(str)| a.index(x) | d.clear()
-| oct(x) | s.format(args) | a.insert(i, x) | get(key, default)
-| round(x, n) | s.isalnum() | a.pop() | --- | 
-| math.factorial(n) | s.isalpha() | a.remove(x) | --- | 
-| math.pow(x, y) | s.isspace() | a.reverse() | --- | 
-| math.sqrt(x) | s.ljust(width) | a.sort() | --- |
-| math.sin, cos, tan,<br>asin, acos, atan | s.lower, s.replace(old, new), <br>s.split(), s.splitlines(),<br>s.strip(), s.upper() | --- | --- |
+| **Numbers** | **Strings** | **Lists** | **Dictionary** | **Type Conversions** |
+|---|---|---|---|---|
+| abs(x) | s.capitalize() | del(a[i:j]) | len(d) | float() |
+| bin(x) | s.center(width) | a.append(x) | del(dkey) | int() | 
+| complex(r, i) | s.endswith(str) | a.count(x) | key in d | int('value', base) | 
+| hex(x) | s.find(str)| a.index(x) | d.clear() | list('string') | 
+| oct(x) | s.format(args) | a.insert(i, x) | get(key, default) | list(dict) | 
+| round(x, n) | s.isalnum() | a.pop() | --- | --- | 
+| math.factorial(n) | s.isalpha() | a.remove(x) | --- | --- | 
+| math.pow(x, y) | s.isspace() | a.reverse() | --- | --- | 
+| math.sqrt(x) | s.ljust(width) | a.sort() | --- | --- | 
+| math.sin, cos, tan,<br>asin, acos, atan | s.lower, s.replace(old, new), <br>s.split(), s.splitlines(),<br>s.strip(), s.upper() | --- | --- | --- | 
 
 <!-- Book References -->
 [1]: " Programming the Raspberry Pi" by Simon Monk. 
