@@ -127,6 +127,34 @@ Here is some information from a great book on Programming the Raspberry Pi by Si
 | math.sqrt(x) | s.ljust(width) | a.sort() | --- | --- | 
 | math.sin, cos, tan,<br>asin, acos, atan | s.lower, s.replace(old, new), <br>s.split(), s.splitlines(),<br>s.strip(), s.upper() | --- | --- | --- | 
 
+#### 14. Object Orientation: Modules, Classes and Methods
+    * Custom python library is called module 
+    * Object-orientation: programs are structured into classes, each responsible for its own behaviour. 
+    * This helps to keep a check on program complexity and makes it easier to manage. This is done using classes and methods. 
+
+    * Modules 
+    * create a group of functions and provide them in a convenient form for others to use or reuse in different projects 
+    * module groups multiple objects and functions in a simple and elegant way. 
+    * module name is same as the file name in which its constituents are defined. 
+
+    * using modules
+    * Somewhere in the Python installation is a file called random.py that contains the randint and other functions.
+    * Since there are so many modules, there is a real danger that different modules might have functions with the same name. 
+    * Solution: None of the functions in the imported module are visible unless we prepend the module name and then a dot onto the front of the function name.
+#### 15. Importing from modules 
+    * using local name for a module, local to the python file
+    * When certain about conflict free usage 
+    * import everything in one scoop
+#### 16. Useful Python Module and Libraries 
+| Module Name | Use | 
+|---|---| 
+| string | string utilities | 
+| datetime | dates and times  |
+| math | math functions  |
+| pickle | data structures  |
+| urllib.request | webpages  |
+| tkinter | GUI |
+
 <!-- Book References -->
 [1]: " Programming the Raspberry Pi" by Simon Monk. 
 
