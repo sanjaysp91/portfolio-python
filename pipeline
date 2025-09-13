@@ -1,0 +1,13 @@
+Immediate 
+1. python requirements files for each project 
+2. link source for examples 
+
+Projects 
+1. data parsing: can dataframe, spi dataframe
+2. data analysis: vehicle data, door data 
+3. picoscope device-control for ultra high speed captures 
+4. data access using api - mftools
+
+Scale friendly design, more standardization  
+1. use containers, environments 
+2. start version control over vscode settings - python interpretor, extensions, git etc. 
