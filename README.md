@@ -205,8 +205,25 @@ Example: converter_using_class
 * Concept used to reduce and sometimes eliminate repearing code. Recall the well known principle in programming: DRY = Don't Repeat Youself! 
 * Idea of inheritence in classes is that when you want a specialized version of a class that already exists, you inherit all the parent class's variables and methods 
 * and just add new ones or override the ones that are different. 
-* Class diagrams are used for representation 
+* Classes are documented using UML diagrams: 
 
+```mermaid
+classDiagram
+    class ScaleConverter {
+        - units_from
+        - units_to
+        - factor
+        + description()
+        + convert()
+    }
+
+    class ScaleAndOffsetConverter {
+        - offset
+        convert()
+    }
+
+    ScaleAndOffsetConverter --|> ScaleConverter
+```
 
 <!-- Book References -->
 [1]: " Programming the Raspberry Pi" by Simon Monk. 
