@@ -203,7 +203,7 @@ Example: converter_using_class
 
 #### 20. Inheritance 
 * Concept used to reduce and sometimes eliminate repearing code. Recall the well known principle in programming: DRY = Don't Repeat Youself! 
-* Idea of inheritence in classes is that when you want a specialized version of a class that already exists, you inherit all the parent class's variables and methods 
+* Idea of inheritance in classes is that when you want a specialized version of a class that already exists, you inherit all the parent class's variables and methods 
 * and just add new ones or override the ones that are different. 
 * Classes are documented using UML diagrams: 
 
@@ -224,6 +224,12 @@ classDiagram
 
     ScaleAndOffsetConverter --|> ScaleConverter
 ```
+Example: Class definition using inheritance
+* This example explores the following important aspects:
+    * Specifying the parent class duing sub-class definition 
+    * Invoking a method from the parent class 
+    * Overriding a method from the parent class
+    * Reusing a method from the parent class because DRY! (Don't Repeat Yourself) 
 
 <!-- Book References -->
 [1]: " Programming the Raspberry Pi" by Simon Monk. 
