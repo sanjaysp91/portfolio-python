@@ -301,3 +301,9 @@ def llm_response(prompt):
 Hello, World
 Positive
 ```
+
+## 3. Python for Machine Learning (ML)  
+This demonstrates:
+1. Using scikit-learn for machine learning applications. 
+2. scikit-learn is built on numpy, scipy, and matplotlib
+3. Open source, commercially usable - BSD license
