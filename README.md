@@ -44,6 +44,11 @@ E.g. To install Jupyter Lab:
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % python3 -m pip install jupyterlab
 ```
 Manually append: jupyterlab==4.4.6 to requirements.txt file 
+* tip to automate manual process:
+```bash
+pip freeze | grep 'jupyterlab' >> requirements.txt
+echo "jupyterlab==4.4.6" >> requirements.txt
+```
 ###### Update full list: 
 ```bash
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % pip freeze > requirements_full.txt 
@@ -308,3 +313,58 @@ This demonstrates:
 1. Using scikit-learn for machine learning applications. 
 2. scikit-learn is built on numpy, scipy, and matplotlib
 3. Open source, commercially usable - BSD license
+
+### 3.1 Getting Started with scikit-learn
+* an open-source machine learning library 
+* supports supervised and unsupervised learning 
+* provides various tools for model fitting, data preprocessing, model selection, model evaluation and other utilities
+* main features of scikit-learn 
+* Installation 
+```bash
+# Create and activate virtual environment, refer section 0. Begin Here for more support. 
+(venv) %
+# Upgrade pip (optional but recommended)
+python3 -m pip install --upgrade pip
+# Install scikit-learn
+python3 -m pip install scikit-learn
+# Verify the installation
+python3 -c "import sklearn; print(sklearn.__version__)"
+# More detailed 
+python3 -c "import sklearn; sklearn.show_versions()"
+# Show scikit-learn version and location
+python3 -m pip show scikit-learn  
+# If it prints a version number (e.g., 1.3.2), scikit-learn is successfully installed.
+(venv) % 1.7.2 
+# Create project requirements files:
+pip freeze > requirements_full.txt
+pip freeze | grep 'scikit' >> requirements.txt
+echo "scikit-learn==1.3.2" >> requirements.txt    # optional, use for appending 
+``` 
+* Dependency 
+    * Scikit-learn plotting capabilities (i.e., functions starting with plot_ and classes ending with Display) require Matplotlib. 
+    * The examples require Matplotlib and some examples require scikit-image, pandas, or seaborn.
+```bash
+# Install matplotlib: 
+python3 -m pip install matplotlib==3.5.0    # specific version 
+python3 pip -m pip install matplotlib    # latest version 
+# Verify the installation
+python3 -c "import matplotlib; print(matplotlib.__version__)"
+# You should see 3.5.0 (if installed specifically) or the latest version number.
+(venv) % 3.10.6 
+```
+* Use Jupyter Notebook
+```bash
+python3 -m pip install jupyter lab
+python3 -c "import jupyterlab; print(jupyterlab.__version__)"
+(venv) % 4.4.9 
+pip freeze > requirements_full.txt
+pip freeze | grep 'jupyterlab=' >> requirements.txt
+# echo "jupyterlab==4.4.9" >> requirements.txt
+
+# start notebook
+(venv) % jupyter lab
+```
+#### 3.1.1 Fitting and predicting: estimator basics 
+* Built-in machine learning algorithms and models are called 'Estimators'.
+* Each estimator can be fitted to data using its 'fit' method. 
+* E.g. Fitting a RandomForestClassifier on sample data: 
