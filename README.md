@@ -57,7 +57,7 @@ Manually append: jupyterlab==4.4.6 to requirements.txt file
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % deactivate 
 ```
 
-### Lessons in Python using Jupyter Notebook
+### Lessons in Python using Jupyter Notebook (please skip this section to jump to projects)
 Here is some information from a great book on Programming the Raspberry Pi by Simon Monk [1].
 
 #### 1. Printing text
