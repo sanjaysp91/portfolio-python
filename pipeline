@@ -11,3 +11,10 @@ Projects
 Scale friendly design, more standardization  
 1. use containers, environments 
 2. start version control over vscode settings - python interpretor, extensions, git etc. 
+
+Automate python venv activation and project startup 
+1. source ./.venv/bin/activate
+2. source ./3_python_for_ml/use_scikit-learn/.venv/bin/activate
+
+Start jupyter lab 
+1. jupyter lab

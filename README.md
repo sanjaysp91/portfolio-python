@@ -367,4 +367,23 @@ pip freeze | grep 'jupyterlab=' >> requirements.txt
 #### 3.1.1 Fitting and predicting: estimator basics 
 * Built-in machine learning algorithms and models are called 'Estimators'.
 * Each estimator can be fitted to data using its 'fit' method. 
-* E.g. Fitting a RandomForestClassifier on sample data: 
+Example: Fitting a RandomForestClassifier on sample data.
+##### RandomForestClassifier 
+* Fit methods accepts two inputs: sample matrix (aka design matrix, X) and target values (y).
+* X: Size is (n_samples, n_features). Rows are Samples. Columns are Features.
+* y: Real numbers for regression learning, discrete set for classification learning. y is not specified for unsupervised learning. Usually a 1d array where 'i'th entry is the target of the 'i'th sample (row) of X.
+* Both X and y are numpy arrays or equivalent array-like data types. 
+
+#### 3.1.2 Transformers and pre-processors 
+* Pre-processing is a part of the machine learning workflow.
+* Pre-processor transforms or imputes the data.
+* Typical pipeline has a pre-processor and a final predictor.
+* In scikit-learn, pre-processors and transformers inherit APIs from BaseEstimator class.
+* Transformer objects have a transform method (and not a predict method) to output transformed matrix from X.
+* ColumnTranformer is used for tranforming heterogeneous data. 
+
+#### 3.1.3 Pipelines: combining pre-processors and estimators 
+* Pipeline is an object that unifies tranformers and estimators (predictors).
+* It has same API with 'fit' and 'predict' methods.
+* Pipeline prevents data leakage e.g. disclosing testing data in training data. 
+
