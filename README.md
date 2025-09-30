@@ -2,22 +2,22 @@
 These are my portfolio projects using Python Programming Language intended for interested clients. 
 
 ## 0. Begin Here
-### Working with Python Environment
-#### 1. Each project gets its own python environment. 
+### 0.1 Working with Python Environment
+#### 0.1.1. Each project gets its own python environment. 
     Default directory for env is: .venv
-#### 2. "venv" is used for virtual python environments.
-#### 3. Using python env: 
-##### 3a. Check python version, use latest:
+#### 0.1.2. "venv" is used for virtual python environments.
+#### 0.1.3. Using python env: 
+##### 0.1.3a. Check python version, use latest:
 ```bash
 sap@Sanjays-MacBook-Air use_jupyter % python3 --version
 Python 3.13.3
 ```
 
-##### 3b. Create python env: 
+##### 0.1.3b. Create python env: 
 ```bash
 sap@Sanjays-MacBook-Air use_jupyter % python3 -m venv .venv
 ```
-##### 3c. Check newly created .venv directory: 
+##### 0.1.3c. Check newly created .venv directory: 
 ```bash
 sap@Sanjays-MacBook-Air use_jupyter % ls -la
 drwxr-xr-x  5 sap  staff    160 Sep  2 22:42 .
@@ -26,16 +26,16 @@ drwxr-xr-x  4 sap  staff    128 Sep  2 22:32 ..
 drwxr-xr-x@ 7 sap  staff    224 Sep  2 22:42 .venv
 -rw-r--r--@ 1 sap  staff  18343 Sep  2 22:33 how-to-python.ipynb
 ```
-##### 3d. Activate environment: 
+##### 0.1.3d. Activate environment: 
 ```bash
 sap@Sanjays-MacBook-Air use_jupyter % source .venv/bin/activate
 ```
-##### 3e. Install requirements using requirements.txt 
+##### 0.1.3e. Install requirements using requirements.txt 
 ```bash
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % pip install -r requirements.txt
 Collecting jupyterlab... 
 ```
-##### 3f. If new libraries are used, update requirements file: 
+##### 0.1.3f. If new libraries are used, update requirements file: 
 ###### Manual: 
 Maually add exact library that is installed using 'python3 -m pip install <lib_name>' command.
 
@@ -53,48 +53,48 @@ echo "jupyterlab==4.4.6" >> requirements.txt
 ```bash
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % pip freeze > requirements_full.txt 
 ```
-#### 4. Start jupyterlab: 
+#### 0.1.4. Start jupyterlab: 
 ```bash
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % jupyter lab
 ```
-#### 5. deactivate the environment:
+#### 0.1.5. deactivate the environment:
 ```bash
 (.venv) sap@Sanjays-MacBook-Air use_jupyter % deactivate 
 ```
 
-### Lessons in Python using Jupyter Notebook (please skip this section to jump to projects)
+### 0.2 Lessons in Python using Jupyter Notebook (please skip this section to jump to projects)
 Here is some information from a great book on Programming the Raspberry Pi by Simon Monk [1].
 
-#### 1. Printing text
+#### 0.2.1. Printing text
 
-#### 2. Variables 
+#### 0.2.2. Variables 
 
-#### 3. Importing libraries (aka modules)
+#### 0.2.3. Importing libraries (aka modules)
 
-#### 4. For Loop
+#### 0.2.4. For Loop
 Example: Dice\
 Example: Double Dice
 
-#### 5. If Else and Elif 
+#### 0.2.5. If Else and Elif 
 Example: Two mutually exclusive clauses\
 Example: Three mutually exclusive clauses
 
-#### 6. While Loop 
+#### 0.2.6. While Loop 
 * A well-known principle in programming is DRY (Don’t Repeat Y ourself).
 * The condition for staying in the loop is permanently set to True. The loop will continue until it gets to break, which will only happen after throwing a double 6.
 
 Example: Double Dice\
 Example: While Loop with Break
 
-#### 7. Strings 
+#### 0.2.7. Strings 
 
-#### 8. Lists 
+#### 0.2.8. Lists 
 * A string is a list of characters
 
 Example: Complex structures, list of list \
 Example: List with For Loop 
 
-#### 9. Functions 
+#### 0.2.9. Functions 
 * As programs get larger, things get more complicated and it becomes necessary to break up your programs into units called functions. 
 * There are better ways still of structuring our programs using classes and modules.
 * The biggest problem in software development of any sort is managing complexity.
@@ -104,7 +104,7 @@ Example: List with For Loop
 Example: Hello n\
 Example: Hangman Game 
 
-#### 10. Dictionaries 
+#### 0.2.10. Dictionaries 
 * Lists: work best when accessing data starting at beginning and working way through. 
 * But when it comes to accessing a particular entry, they can be slow and inefficient. 
 * It is like a book without index or table of contents. You have to read through whole. 
@@ -116,7 +116,7 @@ Example: Hangman Game
 * KEY: string / number / tuple 
 * VALUE: number, list, dictionary 
 
-#### 11. Tuples 
+#### 0.2.11. Tuples 
 * Tuples look like lists, but without the square brackets. 
 * Tuples are immutable. You cannot change them. Strings and numbers are also immutable. 
 * If a tuple is just a list that you cannot reassign, what is the use? 
@@ -126,12 +126,12 @@ Example: Hangman Game
 Example: Multiple Assignment\
 Example: Multiple Return Values 
 
-#### 12. Exceptions 
+#### 0.2.12. Exceptions 
 * Used to flag when something goes wrong in the program. 
 * Python has a mechanism for intercepting errors and allowing to handle them in a custom way. 
 * There is a hierarchy of different types of errors that can be caught. 
 
-#### 13. Summary of useful functions 
+#### 0.2.13. Summary of useful functions 
 | **Numbers** | **Strings** | **Lists** | **Dictionary** | **Type Conversions** |
 |---|---|---|---|---|
 | abs(x) | s.capitalize() | del(a[i:j]) | len(d) | float() |
@@ -145,7 +145,7 @@ Example: Multiple Return Values
 | math.sqrt(x) | s.ljust(width) | a.sort() | --- | --- | 
 | math.sin, cos, tan,<br>asin, acos, atan | s.lower, s.replace(old, new), <br>s.split(), s.splitlines(),<br>s.strip(), s.upper() | --- | --- | --- | 
 
-#### 14. Object Orientation: Modules, Classes and Methods
+#### 0.2.14. Object Orientation: Modules, Classes and Methods
 * Custom python library is called module 
 * Object-orientation: programs are structured into classes, each responsible for its own behaviour. 
 * This helps to keep a check on program complexity and makes it easier to manage. This is done using classes and methods. 
@@ -160,12 +160,12 @@ Example: Multiple Return Values
     * Since there are so many modules, there is a real danger that different modules might have functions with the same name. 
     * Solution: None of the functions in the imported module are visible unless we prepend the module name and then a dot onto the front of the function name.
 
-#### 15. Importing from modules 
+#### 0.2.15. Importing from modules 
 * using local name for a module, local to the python file
 * When certain about conflict free usage 
 * import everything in one scoop
 
-#### 16. Useful Python Module and Libraries 
+#### 0.2.16. Useful Python Module and Libraries 
 | Module Name | Use | 
 |---|---| 
 | string | string utilities | 
@@ -175,7 +175,7 @@ Example: Multiple Return Values
 | urllib.request | webpages  |
 | tkinter | GUI |
 
-#### 17. Object Orientation 
+#### 0.2.17. Object Orientation 
 * Modules are part of object orientation
 * Object orientation has same goals of grouping related items together, providing multiple things in a convenient form, structuring program into classes such that each is responsible for its own behaviour. 
 * It is about objects. 
@@ -185,7 +185,7 @@ Example: Multiple Return Values
 
 Example: how to find out the class of an object: 'abc'.__class__
 
-#### 18. Classes 
+#### 0.2.18. Classes 
 * Defining Classes 
     * Create a class that does the job of converting measurements from one unit to another by multiplying a value by a scale factor. 
     * Give the class a catchy name 
@@ -201,12 +201,12 @@ Example: converter_using_class
         * inside __init__(): new variables are created using assignments. These variables belong to the object and have their initial values set from the parameter set passed. 
         * __init__() is used to initialize and assign variables with default values. 
 
-#### 19.  Encapsulation with Classes 
+#### 0.2.19.  Encapsulation with Classes 
 * Class should encapsulate everything that has to do with the class. E.g. storing data in variables, methods on the data
 * All methods (including __ __init__ __()) must have self as a first parameter. The methods may or maynot need it to access the data of the class to which it belongs. 
 * Each data that the methods use is called parameter. 
 
-#### 20. Inheritance 
+#### 0.2.20. Inheritance 
 * Concept used to reduce and sometimes eliminate repearing code. Recall the well known principle in programming: DRY = Don't Repeat Youself! 
 * Idea of inheritance in classes is that when you want a specialized version of a class that already exists, you inherit all the parent class's variables and methods 
 * and just add new ones or override the ones that are different. 
@@ -246,7 +246,7 @@ This demonstrates:
 2. High-precision decimal arithmetic (decimal.Decimal).
 3. Efficient processing of large datasets with big numbers.
 
-#### Code
+#### 1.1.1 Code
 ```python
 # Increase Python's safety limit for converting big integers to string
 sys.set_int_max_str_digits(1000000)
@@ -265,12 +265,12 @@ dataset = [10**50 + i for i in range(5)]  # simulate 5 huge integers
 dataset_sum = sum(dataset)
 ```
 
-#### Usage
+#### 1.1.2 Usage
 ```bash
 (terminal)~% sudo python3 large-number-demo.py
 ```
 
-#### Output
+#### 1.1.3 Output
 ```txt 
 Digits in 5000!: 16326
 1/7 with high precision: 0.14285714285714285714285714285714285714285714285714
@@ -284,7 +284,7 @@ This demonstrates:
 2. Function definition for setting response, messages and temperature. 
 3. Basic Architecture for prompt and response. 
 
-#### Code
+#### 2.1.1 Code
 ```python
 # Function 
 def llm_response(prompt):
@@ -296,12 +296,12 @@ def llm_response(prompt):
     return response.choices[0].message['content']
 ```
 
-#### Usage
+#### 2.1.2 Usage
 ```bash
 (terminal)~% sudo python3 openai_1.py
 ```
 
-#### Output
+#### 2.1.3 Output
 ```txt 
 Hello, World
 Positive
@@ -401,7 +401,7 @@ Example: cross-validation
 Example: RandomizedSearchCV for RandomForestRegressor
 
 ##### Fun fact: Meaning of **ensemble**
-##### 1. Meaning of “ensemble” in English
+##### Meaning of “ensemble” in English
 * The word *ensemble* comes from French, meaning “together” or “as a whole”.
 * In English, it’s used in contexts like:
     * A music ensemble → a group of musicians performing together.
@@ -409,7 +409,7 @@ Example: RandomizedSearchCV for RandomForestRegressor
     * A theater ensemble → a cast of actors working as a team.
 * So, the core idea is **a group of things working together to form a whole.**
 
-##### 2. Meaning of “ensemble” in Machine Learning
+##### Meaning of “ensemble” in Machine Learning
 * In scikit-learn, the ensemble module provides *ensemble methods* — **techniques that combine multiple models (often called “weak learners”) to create a stronger overall model.**
 * Examples in scikit-learn:
     * Bagging (Bootstrap Aggregating):
@@ -426,7 +426,7 @@ Example: RandomizedSearchCV for RandomForestRegressor
         * Combine predictions from different types of models (e.g., SVM + Logistic Regression + Random Forest).
         * Example: VotingClassifier, StackingClassifier
 
-##### 3. The Logic of Ensemble Learning
+##### The Logic of Ensemble Learning
 * The logic comes directly from the English meaning:
     * **One weak model may make mistakes.**
     * **Many weak models, combined smartly, can cancel out individual errors and give better predictions.**
@@ -447,7 +447,7 @@ Example: RandomizedSearchCV for RandomForestRegressor
        * Randomly samples from the parameter space for a fixed number of iterations.
        * Faster when the parameter space is large.
 
-#### Important Note on Searching
+##### Important Note on Searching
 * Always prefer searching over a pipeline and not a single estimator.
 * Preprocessing the whole dataset before CV leaks test data into training.
 * This breaks independence between train/test sets.
