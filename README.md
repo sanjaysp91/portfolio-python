@@ -391,3 +391,66 @@ Example: Fitting a RandomForestClassifier on sample data.
 * Model fitting doesn't always gurantee prediction accuracy. A lot depends on data used for training and data used in application. And hence the model needs to be directly evaluated.
 * scikit-learn provides various tools for model evaluation.
 Example: cross-validation 
+
+#### 3.1.5 Automatic parameter search 
+* All estimators have tunable parameters. These are also known as hyper-parameters.
+* The estimators have what is called generalization power. And this can depend crtically on a few parameters.
+* In the RandomForestRegressor, *n_estimators* is a parameter that determines the number of trees in the forest and *max_depth* is a parameter that determines each of the tree's max depth.
+* And more often than not, it is unclear as to what the exact value of these critical parameters ought to be. The values generally depend on the data at hand.
+* scikit-learn provides tools to automatically find the best parameter combinations via cross-validation.
+Example: RandomizedSearchCV for RandomForestRegressor
+
+##### Fun fact: Meaning of **ensemble**
+##### 1. Meaning of “ensemble” in English
+* The word *ensemble* comes from French, meaning “together” or “as a whole”.
+* In English, it’s used in contexts like:
+    * A music ensemble → a group of musicians performing together.
+    * A fashion ensemble → a coordinated outfit.
+    * A theater ensemble → a cast of actors working as a team.
+* So, the core idea is **a group of things working together to form a whole.**
+
+##### 2. Meaning of “ensemble” in Machine Learning
+* In scikit-learn, the ensemble module provides *ensemble methods* — **techniques that combine multiple models (often called “weak learners”) to create a stronger overall model.**
+* Examples in scikit-learn:
+    * Bagging (Bootstrap Aggregating):
+        * Train the same model (e.g., decision tree) on random subsets of data.
+        * Combine their predictions (majority vote or average).
+        * Example: BaggingClassifier
+    * Random Forest:
+        * A popular ensemble of decision trees trained with bagging + randomness.
+        * Example: RandomForestClassifier
+    * Boosting:
+        * Models are trained sequentially, each correcting the mistakes of the previous.
+        * Example: AdaBoostClassifier, GradientBoostingClassifier, HistGradientBoostingClassifier
+    * Voting / Stacking:
+        * Combine predictions from different types of models (e.g., SVM + Logistic Regression + Random Forest).
+        * Example: VotingClassifier, StackingClassifier
+
+##### 3. The Logic of Ensemble Learning
+* The logic comes directly from the English meaning:
+    * **One weak model may make mistakes.**
+    * **Many weak models, combined smartly, can cancel out individual errors and give better predictions.**
+    * It’s like:
+        * Asking one doctor for a diagnosis vs.
+        * Asking a panel of 10 doctors and going with the majority opinion.
+* This is why ensemble methods often outperform single models.
+
+##### Fun fact: Meaning of **searchCV**
+* **Search**: refers to *hyperparameter search* (trying out different parameter values to find the best model).
+* **CV**: stands for *Cross-Validation*, a **resampling method** to evaluate models more reliably by splitting data into multiple train/test folds.
+* So, SearchCV = Hyperparameter Search + Cross-Validation.
+* Examples in scikit-learn
+    1. GridSearchCV
+       * Exhaustively tries all combinations of hyperparameters you specify.
+       * Example: searching through all max_depth and n_estimators values for a RandomForestClassifier.
+    2. RandomizedSearchCV
+       * Randomly samples from the parameter space for a fixed number of iterations.
+       * Faster when the parameter space is large.
+
+#### Important Note on Searching
+* Always prefer searching over a pipeline and not a single estimator.
+* Preprocessing the whole dataset before CV leaks test data into training.
+* This breaks independence between train/test sets.
+* Result: overestimates model performance.
+* Pipelines prevent this data leakage.
+
