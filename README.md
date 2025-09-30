@@ -387,3 +387,7 @@ Example: Fitting a RandomForestClassifier on sample data.
 * It has same API with 'fit' and 'predict' methods.
 * Pipeline prevents data leakage e.g. disclosing testing data in training data. 
 
+#### 3.1.4 Model evaluation 
+* Model fitting doesn't always gurantee prediction accuracy. A lot depends on data used for training and data used in application. And hence the model needs to be directly evaluated.
+* scikit-learn provides various tools for model evaluation.
+Example: cross-validation 
