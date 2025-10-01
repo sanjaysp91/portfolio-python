@@ -236,10 +236,6 @@ Example: Class definition using inheritance
     * Overriding a method from the parent class
     * Reusing a method from the parent class because DRY! (Don't Repeat Yourself) 
 
-<!-- Book References -->
-[1]: " Programming the Raspberry Pi" by Simon Monk. 
-
-
 ## 1. Large Number Processing
 This demonstrates:
 1. Handling extremely large integers (math.factorial).
@@ -306,7 +302,6 @@ def llm_response(prompt):
 Hello, World
 Positive
 ```
-######################### testing rebase ############## 
 
 ## 3. Python for Machine Learning (ML)  
 This demonstrates:
@@ -364,6 +359,9 @@ pip freeze | grep 'jupyterlab=' >> requirements.txt
 # start notebook
 (venv) % jupyter lab
 ```
+
+Here is some information from scikit-learn [2].
+
 #### 3.1.1 Fitting and predicting: estimator basics 
 * Built-in machine learning algorithms and models are called 'Estimators'.
 * Each estimator can be fitted to data using its 'fit' method. 
@@ -454,3 +452,17 @@ Example: RandomizedSearchCV for RandomForestRegressor
 * Result: overestimates model performance.
 * Pipelines prevent this data leakage.
 
+### 3.2 Supervised learning 
+#### 3.2.1 Linear Models
+
+
+
+
+
+
+
+
+
+<!-- References -->
+[1]: *Programming the Raspberry Pi* by Simon Monk.  
+[2]: https://scikit-learn.org 
