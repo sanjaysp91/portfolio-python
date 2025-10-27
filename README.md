@@ -244,6 +244,17 @@ Example: Class definition using inheritance
 * Reading big files: following becomes important  
     * Time to read data 
     * Memory used to store the data 
+#### 0.2.22. File System 
+* Python uses Linux to perform file-system-type operations (e.g. moving, copying a file or a directory).
+* The functions are in **Shell Utility (shutil)** package. These work on directories as well as files. 
+* Some features also deal with *file permissions* and *metadata*.
+* **General uses**: copy, move, rename, remove, search file or directory 
+* To copy, move, rename a file: **copy**
+* To copy, move, rename a directory (including contents): **copytree**
+* To remove a directory (including contents): **rmtree** 
+* To search a directory: **glob**
+* To save and load data to file: **pickle**
+<hr><hr>
 
 ## 1. Large Number Processing
 This demonstrates:
@@ -282,6 +293,7 @@ Digits in 5000!: 16326
 Approximation of pi: 3.1415929203539823008849557522123893805309734513274
 Sum of dataset of huge numbers: 500000000000000000000000000000000000000000000000010
 ```
+<hr><hr>
 
 ## 2. Prompt Automation 
 This demonstrates:
@@ -311,6 +323,7 @@ def llm_response(prompt):
 Hello, World
 Positive
 ```
+<hr><hr>
 
 ## 3. Python for Machine Learning (ML)  
 This demonstrates:
