@@ -236,6 +236,15 @@ Example: Class definition using inheritance
     * Overriding a method from the parent class
     * Reusing a method from the parent class because DRY! (Don't Repeat Yourself) 
 
+#### 0.2.21. Files 
+* Python can be used to access files by reading and writing data. 
+* Python variables aren't permanent in nature. Files provide a means of making data more permanent. 
+* Reading file 
+* Reading a file along with error handling 
+* Reading big files: following becomes important  
+    * Time to read data 
+    * Memory used to store the data 
+
 ## 1. Large Number Processing
 This demonstrates:
 1. Handling extremely large integers (math.factorial).
