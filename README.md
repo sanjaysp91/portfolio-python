@@ -316,6 +316,7 @@ python3 -m tkinter    # GUI should pop-up
     * I am using Homebrew as a package manager on my macOS
 ```bash
 brew update    # update brew itself 
+brew upgrade    # I upgraded everything - this should be avoided when possible 
 brew cleanup --dry-run    # check if you want to cleanup any old installations, I decided to keep my old ones since I still have some venv using old Python
 brew install tcl-tk    # didn't work for me  
 brew install python-tk    # installs python with tk (Tkinter) 
