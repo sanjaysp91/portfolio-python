@@ -254,6 +254,98 @@ Example: Class definition using inheritance
 * To remove a directory (including contents): **rmtree** 
 * To search a directory: **glob**
 * To save and load data to file: **pickle**
+
+#### 0.2.23 Internet 
+* Most applications need to connect to the internet.
+* Interaction with a web-server is done using HTTP/HTTPS requests. HTTP stands for Hypertext Transfer Protocol.
+* The text is in HTML language. HTML stands for Hypertext Markup Language - language of the web pages. 
+
+#### 0.2.24 Website scrapping
+* Example sites for leaning to scrape: https://www.google.com/search?q=python, www.example.com
+* "Regular Expressions in Python" comes handy when dealing with the raw data. They are useful for complex searches and validations of text. 
+* Organizations do not like people "scraping" their web pages. Therefore, expect getting a warning or even getting banned from some sites.
+* This action is very dependent on the web page structure and hence very scipts tend to be sensitive - small change in web page structure can break your script.
+* A standard approach is to look for the official web service interface to the site. These services return processed data in XML or JSON format instead of raw HTML format.
+* Read about "web services in Python"
+
+#### 0.2.25 Graphical User Interfaces (GUIs) 
+* Tkinter
+    * A python interface to the Tk GUI system.
+    * Tk is not specific to python and there are interfaces to it from many languages.
+    * It runs on many operating systems including Linux and it the most commonly used tool for creating a GUI for Python.
+    * Tkinter may or may not come loaded with Python, so installation might be required. 
+* **Important Note**: You might have to reinstall Python in case the base doesn't have Tkinter already. In my case, I had to since my base python installation (version 3.13) didn't have Tkinter.
+* Tkinter is the Python interface to Tcl/Tk, the GUI toolkit. 
+* Here are some steps that help make sense of things: 
+* In your virtual environment try some of the following to see if Tkinter is supported or not. 
+```bash
+# test 1: in terminal (bash/zsh)
+python3 -c "import tkinter; print('tkinter OK', tkinter.TkVersion)"     # tkinter OK 9.0
+python3 -c "import tkinter; tkinter._test()"    # GUI should pop-up
+python3 -m tkinter    # GUI should pop-up
+```
+```python
+# test 2: in python file 
+import tkinter
+tkinter._test()
+print("Tkinter is installed and ready to use!")
+``` 
+* If above fails with *ModuleNotFoundError: No module named '_tkinter'*, do not worry. This just means that your virtual Python environment doesn't have Tkinter. 
+* Immediate test is with your base python. Deactivate your virtual environment and run the same set of tests but now in your base python environment. Try following to learn more about your base installation: 
+```bash
+# learn more about your base Python installation 
+python3 --version   # Python 3.13.3
+which python3   # /opt/homebrew/bin/python3
+python3 -c "import sys; print(sys.executable)"  # /opt/homebrew/opt/python@3.13/bin/python3.13
+
+# By far the most comprehensive check
+cat ./0_begin_here/use_jupyter/.venv/pyvenv.cfg    # expect following: 
+# home = /opt/homebrew/opt/python@3.13/bin
+# include-system-site-packages = false
+# version = 3.13.3
+# executable = /opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/bin/python3.13
+# command = /opt/homebrew/opt/python@3.13/bin/python3.13 -m venv /Users/sap/mydev/GitHub/portfolio-python/0_begin_here/use_jupyter/.venv
+
+# now run all or some of the tests to check Tkinter installation 
+python3 -m tkinter    # GUI should pop-up
+
+# If you got: ModuleNotFoundError: No module named '_tkinter', this confirms that your base Python lacks Tkinter. 
+# Else, if you got a GUI, it means your virtual environment was not created so that it can use Tkinter from base installation. Read more about this on the internet. 
+```
+* If your base Python lacks Tkinter, the next step is to reinstall or upgrade your base Python with Tkinter. Here's how I did on my system: 
+    * I am using Homebrew as a package manager on my macOS
+```bash
+brew update    # update brew itself 
+brew cleanup --dry-run    # check if you want to cleanup any old installations, I decided to keep my old ones since I still have some venv using old Python
+brew install tcl-tk    # didn't work for me  
+brew install python-tk    # installs python with tk (Tkinter) 
+# actually a meta formula that installs Homebrew’s python and ensures Tkinter is functional. 
+python3 -m tkinter    # GUI should pop-up
+``` 
+* **Important Note**: *brew install tck-tk* failed because
+* Background: Tkinter dependency
+    * Tkinter is the Python interface to Tcl/Tk, the GUI toolkit.
+    * It’s not a separate package in Homebrew. It comes with Python, but only if Python was built with Tk support.  
+* Now, for virtual environment: 
+    * Since we created venv before Tk was working, simply recreat it.
+```bash
+python3 -m venv ./0_begin_here/use_jupyter/.venv
+
+# I hit a roadblock here:
+# Error: Command '['/Users/sap/mydev/GitHub/portfolio-python/0_begin_here/use_jupyter/.venv/bin/python3.14', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
+
+# remove old .venv and try again
+rm -rf ./0_begin_here/use_jupyter/.venv
+
+# error repeated 
+
+# So I tried to check if this issue was from new Python installation (3.14). If so, it should disappear if I tried to create venv using my old one (3.13.3)
+/opt/homebrew/bin/python3.13 -m venv ./0_begin_here/use_jupyter/.venv_3_13_3
+
+# error repeated 
+
+
+```     
 <hr><hr>
 
 ## 1. Large Number Processing
