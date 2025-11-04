@@ -27,10 +27,95 @@ brew install pyenv
 - Survives OS upgrades, Python upgrades, etc.
 
 ```bash
+# Running 'pyenv install -l' gives the list of all available versions.
 pyenv install 3.12.7
 pyenv install 3.11.9
 ```
 
+**Outputs**
+```bash
+sap@Sanjays-MacBook-Air test-pyenv % pyenv install 3.13.3
+python-build: use openssl@3 from homebrew
+python-build: use readline from homebrew
+Downloading Python-3.13.3.tar.xz...
+-> https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tar.xz
+Installing Python-3.13.3...
+python-build: use tcl-tk from homebrew
+python-build: use readline from homebrew
+python-build: use zlib from xcode sdk
+Installed Python-3.13.3 to /Users/sap/.pyenv/versions/3.13.3
+```
+
+**checks**
+```bash
+sap@Sanjays-MacBook-Air test-pyenv % pyenv versions
+* system (set by /Users/sap/.pyenv/version)
+  3.13.3
+
+sap@Sanjays-MacBook-Air test-pyenv % pyenv install -list
+sap@Sanjays-MacBook-Air test-pyenv % pyenv install -l | less
+
+# show current python version 
+sap@Sanjays-MacBook-Air test-pyenv % pyenv version-name
+system
+
+# show global python version
+sap@Sanjays-MacBook-Air test-pyenv % pyenv global
+system
+
+# show local python version 
+sap@Sanjays-MacBook-Air test-pyenv % pyenv local 
+pyenv: no local version configured for this directory
+
+# show .pyenv versions 
+sap@Sanjays-MacBook-Air test-pyenv % ls -l ~/.pyenv/versions                
+total 0
+drwxr-xr-x@ 6 sap  staff  192 Nov  5 00:12 3.13.3
+
+# Automatically select whenever you are in the current directory (or its subdirectories):
+# pyenv local <version>
+sap@Sanjays-MacBook-Air test-pyenv % pyenv local system
+sap@Sanjays-MacBook-Air test-pyenv % pyenv local       
+system
+sap@Sanjays-MacBook-Air test-pyenv % cat ./.python-version 
+system
+#    
+sap@Sanjays-MacBook-Air test-pyenv % pyenv local 3.13.3
+sap@Sanjays-MacBook-Air test-pyenv % pyenv local       
+3.13.3
+sap@Sanjays-MacBook-Air test-pyenv % cat ./.python-version 
+3.13.3
+# To Get currently set Python version using PyEnv
+sap@Sanjays-MacBook-Air test-pyenv % pyenv version
+3.13.3 (set by /Users/sap/mydev/GitHub/portfolio-python/0_begin_here/sandbox/test-pyenv/.python-version)
+
+# Select globally for your user account:
+# pyenv global <version>
+sap@Sanjays-MacBook-Air test-pyenv % pyenv global
+system
+sap@Sanjays-MacBook-Air sandbox % pyenv version
+system (set by /Users/sap/.pyenv/version)
+sap@Sanjays-MacBook-Air sandbox % pyenv global 3.13.3
+sap@Sanjays-MacBook-Air sandbox % pyenv versions     
+  system
+* 3.13.3 (set by /Users/sap/.pyenv/version)
+
+
+# Select shell version 
+# pyenv shell <version>
+sap@Sanjays-MacBook-Air sandbox % pyenv shell
+# pyenv: shell integration not enabled. Run `pyenv init' for instructions.
+
+# # To unset a Python version set using PyEnv:
+# pyenv shell --unset
+# pyenv local --unset
+# pyenv global --unset
+
+```
+
+**Pyenv Precedence Chart**
+
+![alt text](assets/pyenv_precedence.jpg)
 ---
 
 ### Step 2: Use `poetry` (Recommended) or `pipenv` for Dependency & Environment Management

@@ -346,7 +346,7 @@ rm -rf ./0_begin_here/use_jupyter/.venv
 # error repeated 
 ```     
 **Important Note**
-1. For more details on resolving python environment issues, refer to how-to-python-environment.md
+1. For more details on resolving python environment issues, refer to: [how-to-python-environment.md](how-to-python-environment.md)
 <hr><hr>
 
 ## 1. Large Number Processing
