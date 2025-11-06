@@ -124,6 +124,11 @@ sap@Sanjays-MacBook-Air sandbox % pyenv shell
 
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
+
+# OR use brew
+brew cleanup --dry-run    # check for conflicts, etc. 
+brew update
+brew install poetry 
 ```
 
 In your project:
@@ -135,6 +140,240 @@ poetry env use 3.12.7     # Creates venv using pyenv's Python
 poetry install            # Installs deps + creates lock file
 ```
 
+On my system: 
+```bash
+##
+mkdir test-poetry
+cd test-poetry 
+##
+ls -la
+drwxr-xr-x@ 2 sap  staff   64 Nov  7 03:01 .
+drwxr-xr-x@ 6 sap  staff  192 Nov  7 03:01 ..
+##
+pyenv local 3.13.3
+pyenv local       
+3.13.3
+##
+ls -la
+total 8
+drwxr-xr-x@ 3 sap  staff   96 Nov  7 03:01 .
+drwxr-xr-x@ 6 sap  staff  192 Nov  7 03:01 ..
+-rw-r--r--@ 1 sap  staff    7 Nov  7 03:02 .python-version
+##
+cat .python-version 
+3.13.3
+##
+poetry env use 3.13.3    # first problem - need to initialize pyproject.toml file
+
+Poetry could not find a pyproject.toml file in /Users/sap/mydev/GitHub/portfolio-python/0_begin_here/sandbox/test-poetry or its parents
+##
+poetry about    # learn a bit more about poetry before shooting in the dark
+Poetry - Package Management for Python
+
+Version: 2.2.1
+Poetry-Core Version: 2.2.1
+
+Poetry is a dependency manager tracking local dependencies of your projects and libraries.
+See https://github.com/python-poetry/poetry for more information.
+
+##
+poetry init
+
+This command will guide you through creating your pyproject.toml config.
+
+Package name [test-poetry]:  sap_demo
+Version [0.1.0]:  0.1.0
+Description []:  sap_demp_0.1.0
+Author [sap <s@u.n.github.com>, n to skip]:  
+License []:  MIL
+Compatible Python versions [>=3.13]:  
+
+Would you like to define your main dependencies interactively? (yes/no) [yes] 
+        You can specify a package in the following forms:
+          - A single name (requests): this will search for matches on PyPI
+          - A name and a constraint (requests@^2.23.0)
+          - A git url (git+https://github.com/python-poetry/poetry.git)
+          - A git url with a revision         (git+https://github.com/python-poetry/poetry.git#develop)
+          - A file path (../my-package/my-package.whl)
+          - A directory (../my-package/)
+          - A url (https://example.com/packages/my-package-0.1.0.tar.gz)
+        
+Package to add or search for (leave blank to skip): 
+
+Would you like to define your development dependencies interactively? (yes/no) [yes] 
+Package to add or search for (leave blank to skip): 
+
+Generated file
+
+[project]
+name = "sap-demo"
+version = "0.1.0"
+description = "sap_demp_0.1.0"
+authors = [
+    {name = "sap",email = "sanjaysp91@users.noreply.github.com"}
+]
+license = {text = "MIL"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+Do you confirm generation? (yes/no) [yes] 
+##
+ls -la
+total 16
+drwxr-xr-x@ 4 sap  staff  128 Nov  7 03:11 .
+drwxr-xr-x@ 6 sap  staff  192 Nov  7 03:01 ..
+-rw-r--r--@ 1 sap  staff    7 Nov  7 03:02 .python-version
+-rw-r--r--@ 1 sap  staff  348 Nov  7 03:11 pyproject.toml
+##
+cat pyproject.toml 
+[project]
+name = "sap-demo"
+version = "0.1.0"
+description = "sap_demp_0.1.0"
+authors = [
+    {name = "sap",email = "sanjaysp91@users.noreply.github.com"}
+]
+license = {text = "MIL"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+##
+poetry env use 3.13.3
+Creating virtualenv sap-demo-qXkoyfK8-py3.13 in /Users/sap/Library/Caches/pypoetry/virtualenvs
+Using virtualenv: /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13
+##
+which python3
+/opt/homebrew/bin/python3
+##
+poetry install    # second set of issue 
+Updating dependencies
+Resolving dependencies... (0.1s)
+
+Writing lock file
+
+Installing the current project: sap-demo (0.1.0)
+Error: The current project could not be installed: Readme path `/Users/sap/mydev/GitHub/portfolio-python/0_begin_here/sandbox/test-poetry/README.md` does not exist.
+If you do not want to install the current project use --no-root.
+If you want to use Poetry only for dependency management but not for packaging, you can disable package mode by setting package-mode = false in your pyproject.toml file.
+If you did intend to install the current project, you may need to set `packages` in your pyproject.toml file.
+
+##
+poetry install --no-root    # of disable package-mode permanently 
+Installing dependencies from lock file
+##
+ls -la
+total 24
+drwxr-xr-x@ 5 sap  staff  160 Nov  7 03:13 .
+drwxr-xr-x@ 6 sap  staff  192 Nov  7 03:01 ..
+-rw-r--r--@ 1 sap  staff    7 Nov  7 03:02 .python-version
+-rw-r--r--@ 1 sap  staff  246 Nov  7 03:13 poetry.lock
+-rw-r--r--@ 1 sap  staff  348 Nov  7 03:11 pyproject.toml
+
+cat poetry.lock 
+# This file is automatically @generated by Poetry 2.2.1 and should not be changed by hand.
+package = []
+
+[metadata]
+lock-version = "2.1"
+python-versions = ">=3.13"
+content-hash = "43c15d4b40e26b9dc4090308565270876da3b72ef2b9fa0bddbe4b344cfe177c"
+
+##
+poetry shell    # third issue 
+
+# Looks like you're trying to use a Poetry command that is not available.
+
+Since Poetry (2.0.0), the shell command is not installed by default. You can use,
+
+  - the new env activate command (recommended); or
+  - the shell plugin to install the shell command
+
+Documentation: https://python-poetry.org/docs/managing-environments/#activating-the-environment
+
+Note that the env activate command is not a direct replacement for shell command.
+
+##
+poetry run which python3
+/Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/python3
+##
+poetry env -h           
+The requested command does not exist in the env namespace.
+
+Did you mean one of these perhaps?
+    env activate: Print the command to activate a virtual environment.
+    env info: Displays information about the current environment.
+    env list: Lists all virtualenvs associated with the current project.
+    env remove: Remove virtual environments associated with the project.
+    env use: Activates or creates a new virtualenv for the current project.
+
+Documentation: https://python-poetry.org/docs/cli/#env
+
+##
+poetry env info
+
+Virtualenv
+Python:         3.13.3
+Implementation: CPython
+Path:           /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13
+Executable:     /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/python
+Valid:          True
+
+Base
+Platform:   darwin
+OS:         posix
+Python:     3.13.3
+Path:       /Users/sap/.pyenv/versions/3.13.3
+Executable: /Users/sap/.pyenv/versions/3.13.3/bin/python3.13
+
+##
+poetry env list
+sap-demo-qXkoyfK8-py3.13 (Activated)
+##
+which python3
+/opt/homebrew/bin/python3
+##
+poetry env activate
+source /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/activate
+##
+which python3      
+/opt/homebrew/bin/python3
+##
+poetry env list    
+sap-demo-qXkoyfK8-py3.13 (Activated)
+##
+source /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/activate
+(sap-demo-py3.13) sap@Sanjays-MacBook-Air test-poetry % which python3                                                                              
+/Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/python3
+##
+(sap-demo-py3.13) sap@Sanjays-MacBook-Air test-poetry % deactivate
+which python3
+/opt/homebrew/bin/python3
+##
+source /Users/sap/Library/Caches/pypoetry/virtualenvs/sap-demo-qXkoyfK8-py3.13/bin/activate
+(sap-demo-py3.13) sap@Sanjays-MacBook-Air test-poetry % ls -la
+total 24
+drwxr-xr-x@ 5 sap  staff  160 Nov  7 03:13 .
+drwxr-xr-x@ 6 sap  staff  192 Nov  7 03:01 ..
+-rw-r--r--@ 1 sap  staff    7 Nov  7 03:02 .python-version
+-rw-r--r--@ 1 sap  staff  246 Nov  7 03:13 poetry.lock
+-rw-r--r--@ 1 sap  staff  348 Nov  7 03:11 pyproject.toml
+##
+(sap-demo-py3.13) sap@Sanjays-MacBook-Air test-poetry % python3 -m tkinter    # GOT the GUI, finally! 
+```
 **Benefits:**
 - `pyproject.toml` + `poetry.lock` = reproducible builds
 - Auto-creates venv in **project-local** or **central cache** (`~/.cache/pypoetry/virtualenvs`)
