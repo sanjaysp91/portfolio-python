@@ -116,6 +116,8 @@ sap@Sanjays-MacBook-Air sandbox % pyenv shell
 **Pyenv Precedence Chart**
 
 ![alt text](assets/pyenv_precedence.jpg)
+sources: [oschannel/pyenv_basics_cheatsheet.md](https://gist.github.com/oschannel/7f61b590fb866c5989bbbdedb5bf9369)
+
 ---
 
 ### Step 2: Use `poetry` (Recommended) or `pipenv` for Dependency & Environment Management
@@ -499,6 +501,7 @@ Done. No `venv` recreation. Ever.
 - [`pyenv`](https://github.com/pyenv/pyenv)
 - [`poetry`](https://python-poetry.org/)
 - [`pipenv`](https://pipenv.pypa.io/)
+- [`oschannel/pyenv_basics_cheatsheet.md`](https://gist.github.com/oschannel/7f61b590fb866c5989bbbdedb5bf9369)
 
 This is the **industry-standard, scalable, long-term solution** used by companies and top open-source projects in 2025.
 
@@ -660,7 +663,6 @@ That’s the **scalable, long-term, industry-standard fix**.
 ---
 ---
 ---
-# Markdown formatted 
 # Part 1: Scalable Long-Term Python Environment Setup  
 *(Originally: “Every time I upgrade Python, my venv dies”)*
 
@@ -725,14 +727,13 @@ cd my-project && pyenv install 3.12.7 && pyenv local 3.12.7 && poetry init
 ```
 
 Industry-standard, used by top OSS projects in 2025.
-```
+
 
 ---
 
 # Part 2: Tkinter-Proof Setup  
 *(“How does this solve Tkinter issues?”)*
 
-```markdown
 **Tkinter is NOT pip-installable** — it needs **Tcl/Tk baked into the interpreter**.
 
 `pyenv` + `poetry` **doesn’t auto-install Tkinter**,  
@@ -805,5 +806,3 @@ poetry run python -c "import tkinter, sys; print('Ready:', tkinter.TkVersion)"
 `poetry` recreates the venv safely.  
 → **Tkinter never breaks again**, even across major upgrades.
 ```
-
-Copy-paste either block into any `.md` file and you’re done! 🚀
