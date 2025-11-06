@@ -210,7 +210,7 @@ name = "sap-demo"
 version = "0.1.0"
 description = "sap_demp_0.1.0"
 authors = [
-    {name = "sap",email = "sanjaysp91@users.noreply.github.com"}
+    {name = "sap",email = "s@u.n.github.com"}
 ]
 license = {text = "MIL"}
 readme = "README.md"
